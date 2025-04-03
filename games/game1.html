@@ -3,11 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game 1</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Tic tac toe</title>
+    <link rel="stylesheet" href="../assets/css/game1.css" />
   </head>
   <body>
-    <script src="../assets/js/main.js"></script>
+    <div class="container">
+      <div class="turn">
+        <h2>Lượt của</h2>
+        <div class="turn-box align">❌</div>
+        <div class="turn-box align">⭕</div>
+        <div class="bg"></div>
+      </div>
+      <div class="board">
+        <div class="box align">0</div>
+        <div class="box align">1</div>
+        <div class="box align">2</div>
+        <div class="box align">3</div>
+        <div class="box align">4</div>
+        <div class="box align">5</div>
+        <div class="box align">6</div>
+        <div class="box align">7</div>
+        <div class="box align">8</div>
+      </div>
+      <h1 id="result"></h1>
+      <button id="play-again">Chơi lại</button>
+    </div>
     <script src="../assets/js/sidebar.js"></script>
+    <script src="../assets/js/game1.js"></script>
   </body>
 </html>
