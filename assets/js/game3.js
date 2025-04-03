@@ -1,7 +1,7 @@
 // Snake
 const cvs_snake = document.getElementById("snake");
 const ctx_snake = cvs_snake.getContext("2d");
-
+ 
 const unit_snake = 32;
 
 const foodImg = new Image();
@@ -65,6 +65,7 @@ function drawButton() {
     ctx_snake.textAlign = "center";
     ctx_snake.textBaseline = "middle";
     ctx_snake.fillText(buttonReset.text, buttonReset.x + buttonReset.width / 2, buttonReset.y + buttonReset.height / 2);
+    
 }
 
 function drawButtonMusic() {
@@ -76,6 +77,7 @@ function drawButtonMusic() {
     ctx_snake.textAlign = "center";
     ctx_snake.textBaseline = "middle";
     ctx_snake.fillText(buttonTheme.text, buttonTheme.x + buttonTheme.width / 2, buttonTheme.y + buttonTheme.height / 2);
+    
 }
 // end buttons 
 
@@ -117,6 +119,7 @@ function collision(head, array) {
 
 // draw 
 function draw(){
+    ctx_snake.clearRect(0, 0, cvs_snake.width, cvs_snake.height);
     if(queuedDirection){
         if(
             (d === "RIGHT" && queuedDirection !== "LEFT") ||
@@ -227,7 +230,9 @@ function draw(){
     
     ctx_snake.fillStyle = "white";
     ctx_snake.font = "37px sans-serif";
-    ctx_snake.fillText(score, 2.2*unit_snake, 1.9*unit_snake);
+    ctx_snake.textBaseline = "top";
+    ctx_snake.textAlign = "start";
+    ctx_snake.fillText(score, 2.2*unit_snake, 1*unit_snake);
 
     queuedDirection = null;
 }
