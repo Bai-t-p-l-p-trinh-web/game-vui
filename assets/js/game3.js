@@ -55,7 +55,7 @@ backgroundReset.src = "../assets/images/snake_reset.jpg";
 const buttonReset = {
   x: 5 * unit_snake,
   y: 11 * unit_snake,
-  width: 7 * unit_snake,
+  width: 10 * unit_snake,
   height: 2 * unit_snake,
   text: "play again!",
 };
