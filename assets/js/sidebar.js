@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button onclick="navigateTo('game2.html')">🎮 Game 2</button>
         <button onclick="navigateTo('game3.html')">🎮 Game 3</button>
         <button onclick="navigateTo('game4.html')">🎮 Game 4</button>
+        <button onclick="navigateTo('game5.html')">🎮 Game 5</button>
         <button id="toggle-sound">🔊 Tắt âm thanh</button>
     `;
   document.body.insertAdjacentElement("afterbegin", sidebar);
