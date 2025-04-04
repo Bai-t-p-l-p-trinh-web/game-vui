@@ -2,11 +2,52 @@ const boxes = document.querySelectorAll(".box");
 
 let turn = "X";
 let isGameOver = false;
+const mark = new Audio();
+const win = new Audio();
+const draw = new Audio();
+const theme = new Audio();
+
+mark.src = "../assets/audio/tic_tac_marking_sound.mp3";
+win.src = "../assets/audio/tic_tac_winning_sound.mp3";
+draw.src = "../assets/audio/tic_tac_draw_sound.mp3";
+theme.src = "../assets/audio/tic_tac_theme.mp3";
+
+theme.loop = true;
+
+let musicStarted = false;
+let isSoundOn = true;
+document.addEventListener("toggleSound", function (event) {
+  isSoundOn = event.detail.isSoundOn;
+
+  theme.muted = !isSoundOn;
+  mark.muted = !isSoundOn;
+  win.muted = !isSoundOn;
+  draw.muted = !isSoundOn;
+
+  if (isSoundOn && musicStarted && theme.paused) {
+    theme.play().catch((error) => console.log("Audio play failed:", error));
+  }
+});
+
+if (!musicStarted && isSoundOn) {
+  theme
+    .play()
+    .then(() => {
+      musicStarted = true;
+    })
+    .catch((error) => {
+      console.log(
+        "Theme music autoplay failed, likely requires user interaction.",
+        error
+      );
+    });
+}
 
 boxes.forEach((e) => {
   e.innerHTML = "";
   e.addEventListener("click", () => {
     if (!isGameOver && e.innerHTML === "") {
+      mark.play();
       e.innerHTML = turn;
       e.style.backgroundColor = turn == "X" ? "#865dff" : "#5d73ff";
       checkWin();
@@ -54,6 +95,7 @@ function checkWin() {
 
     if (b1 != "" && b1 === b2 && b2 === b3) {
       isGameOver = true;
+      win.play();
       document.querySelector("#result").innerHTML = `Người chiến thắng là ${
         turn == "X" ? "❌" : "⭕"
       }`;
@@ -80,6 +122,7 @@ function checkDraw() {
 
     if (isDraw) {
       isGameOver = true;
+      draw.play();
       document.querySelector("#result").innerHTML = "Huề 🙌";
       document.querySelector("#result").style.color = "#FFA500";
       document.querySelector("#play-again").style.display = "inline";

@@ -43,3 +43,13 @@ prev.onclick = function () {
   active = active - 1 >= 0 ? active - 1 : active;
   loadShow();
 };
+
+document.addEventListener("keydown", (e) => {
+  if (e.keyCode == 37 || e.keyCode == 40) {
+    active = active - 1 >= 0 ? active - 1 : active;
+    loadShow();
+  } else if (e.keyCode == 38 || e.keyCode == 39) {
+    active = active + 1 < items.length ? active + 1 : active;
+    loadShow();
+  }
+});

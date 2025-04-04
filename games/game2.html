@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game 2</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/game2.css" />
   </head>
   <body>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/sidebar.js"></script>
+    <div class="container">
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div class="board border-animation">
+          <h1>Memory Cards</h1>
+          <p>
+            Số lượt thử: <span style="color: #4666ea" class="tries">0</span>
+          </p>
+          <p>Điểm: <span style="color: #4666ea" class="score">0</span></p>
+          <span class="timer">00:00</span>
+        </div>
+        <h2 id="summary"></h2>
+        <div class="actions">
+          <button id="start">Bắt đầu</button>
+          <button id="restart">Chơi lại</button>
+        </div>
+      </div>
+      <div class="grid-container"></div>
+      <script src="../assets/js/game2.js"></script>
+      <script src="../assets/js/sidebar.js"></script>
+    </div>
   </body>
 </html>
