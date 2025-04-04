@@ -68,6 +68,16 @@ dino_wait_7.src = "../assets/images/dino/Idle_7.png";
 dino_wait_8.src = "../assets/images/dino/Idle_8.png";
 dino_wait_9.src = "../assets/images/dino/Idle_9.png";
 dino_wait_10.src = "../assets/images/dino/Idle_10.png";
+
+
+// hedges 
+const hedge_1 = new Image();
+const hedge_2 = new Image();
+const hedge_3 = new Image();
+hedge_1.src = "../assets/images/dino/hedge_1.png";
+hedge_2.src = "../assets/images/dino/hedge_2.png";
+hedge_3.src = "../assets/images/dino/hedge_3.png";
+
 // end Image 
 
 const unit_dino = 32;
@@ -96,19 +106,22 @@ const hedges_types = [
         x : 32*unit_dino,
         y : 16*unit_dino,
         width: unit_dino,
-        height: unit_dino
+        height: unit_dino,
+        image: 1
     },
     {
         x : 32*unit_dino,
         y : 16*unit_dino,
         width: 1.5*unit_dino,
-        height: unit_dino
+        height: unit_dino,
+        image: 2
     },
     {
         x : 32*unit_dino,
         y : 15*unit_dino,
         width: unit_dino,
-        height: 2*unit_dino
+        height: 2*unit_dino,
+        image: 3
     }
 ]
 let hedges = [];
@@ -285,8 +298,16 @@ function draw(){
     }
     for(let i = 0; i<hedges.length; i++){
         hedges[i].x -= fram_speed[cur_level];
-        ctx_dino.fillStyle = "red";
-        ctx_dino.fillRect(hedges[i].x, hedges[i].y, hedges[i].width, hedges[i].height);
+        // ctx_dino.fillStyle = "red";
+        // ctx_dino.fillRect(hedges[i].x, hedges[i].y, hedges[i].width, hedges[i].height);
+        if(hedges[i].image == 1){
+            ctx_dino.drawImage(hedge_1, hedges[i].x, hedges[i].y, hedges[i].width, hedges[i].height)
+        } else if(hedges[i].image == 2){
+            ctx_dino.drawImage(hedge_2, hedges[i].x, hedges[i].y, hedges[i].width, hedges[i].height)
+        } else {
+            ctx_dino.drawImage(hedge_3, hedges[i].x, hedges[i].y, hedges[i].width, hedges[i].height)
+        }
+       
     }
     let length_hedges = hedges.length;
     hedges = hedges.filter(hedge => hedge.x >= 0);
