@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.createElement("div");
   sidebar.classList.add("sidebar");
   sidebar.innerHTML = `
+        <h1>Game Zui</h1>
         <button onclick="navigateTo('index.html')">🏠 Home</button>
         <button onclick="navigateTo('game1.html')">🎮 Game 1</button>
         <button onclick="navigateTo('game2.html')">🎮 Game 2</button>
@@ -37,3 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.dispatchEvent(toggleSoundEvent);
   });
 });
+
+function navigateTo(path) {
+  window.location.href = `${path}`;
+}
