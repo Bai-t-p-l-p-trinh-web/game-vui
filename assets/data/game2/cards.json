@@ -1,0 +1,62 @@
+[
+  {
+    "image": "../assets/images/game2_cards/p1.png",
+    "name": "pic1"
+  },
+  {
+    "image": "../assets/images/game2_cards/p2.png",
+    "name": "pic2"
+  },
+  {
+    "image": "../assets/images/game2_cards/p3.png",
+    "name": "pic3"
+  },
+  {
+    "image": "../assets/images/game2_cards/p4.png",
+    "name": "pic4"
+  },
+  {
+    "image": "../assets/images/game2_cards/p5.png",
+    "name": "pic5"
+  },
+  {
+    "image": "../assets/images/game2_cards/p6.png",
+    "name": "pic6"
+  },
+  {
+    "image": "../assets/images/game2_cards/p7.png",
+    "name": "pic7"
+  },
+  {
+    "image": "../assets/images/game2_cards/p8.png",
+    "name": "pic8"
+  },
+  {
+    "image": "../assets/images/game2_cards/p9.png",
+    "name": "pic9"
+  },
+  {
+    "image": "../assets/images/game2_cards/p10.png",
+    "name": "pic10"
+  },
+  {
+    "image": "../assets/images/game2_cards/p11.png",
+    "name": "pic11"
+  },
+  {
+    "image": "../assets/images/game2_cards/p12.png",
+    "name": "pic12"
+  },
+  {
+    "image": "../assets/images/game2_cards/p13.png",
+    "name": "pic13"
+  },
+  {
+    "image": "../assets/images/game2_cards/p14.png",
+    "name": "pic14"
+  },
+  {
+    "image": "../assets/images/game2_cards/p15.png",
+    "name": "pic15"
+  }
+]
